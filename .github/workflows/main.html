@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NFSU FACT 2026 | Cyber & Bio Forensics — Live Online Program</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- All existing styles remain exactly the same --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #050a15 0%, #0a1225 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            padding: 32px 20px;
+            position: relative;
+        }
+
+        /* poster card - premium look */
+        .poster {
+            max-width: 1200px;
+            width: 100%;
+            background: radial-gradient(circle at 20% 30%, #0b1428, #030613);
+            border-radius: 56px;
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 255, 255, 0.2), 0 0 0 6px rgba(0, 30, 60, 0.4);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.3s;
+            backdrop-filter: blur(0px);
+        }
+
+        .poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.9), 0 0 0 2px rgba(0, 255, 255, 0.4);
+        }
+
+        /* header section with neon border */
+        .header {
+            background: radial-gradient(ellipse at 70% 20%, #0c2e3f, #02070f);
+            padding: 2.2rem 2rem 1.8rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .nfsu-badge {
+            display: inline-block;
+            background: rgba(0, 210, 210, 0.12);
+            backdrop-filter: blur(5px);
+            padding: 8px 22px;
+            border-radius: 80px;
+            font-size: 0.85rem;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+            color: #9effff;
+            border: 1px solid rgba(0, 255, 255, 0.6);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFFFFF, #9ad7ff, #2affdd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #c9edff;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tagline span {
+            background: rgba(255,255,255,0.04);
+            padding: 5px 16px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .subjects-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .subject-pill {
+            font-weight: 800;
+            font-size: 1.15rem;
+            background: linear-gradient(110deg, #0e1c2e, #03121f);
+            padding: 10px 28px;
+            border-radius: 60px;
+            border-left: 3px solid #0ff;
+            border-right: 3px solid #0ff;
+            color: #e0f5ff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: 0.2s;
+        }
+
+        /* features grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            padding: 2.8rem 2rem;
+            background: rgba(2, 10, 20, 0.65);
+            backdrop-filter: blur(1px);
+        }
+
+        .feature-card {
+            background: rgba(8, 22, 40, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            padding: 1.6rem 1rem;
+            text-align: center;
+            transition: all 0.25s;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .feature-card:hover {
+            border-color: #0ff;
+            background: rgba(20, 55, 85, 0.8);
+            transform: translateY(-6px);
+        }
+
+        .feature-icon {
+            font-size: 2.7rem;
+            color: #2effe6;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .feature-desc {
+            font-size: 0.85rem;
+            color: #c6e2ff;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* subject deep dive */
+        .subject-highlight {
+            padding: 1.8rem 2rem 2.2rem;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            background: radial-gradient(circle at 0% 40%, rgba(0,60,70,0.25), transparent);
+        }
+
+        .split-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: space-between;
+        }
+
+        .split {
+            flex: 1;
+            min-width: 260px;
+            background: rgba(4, 14, 24, 0.75);
+            border-radius: 32px;
+            padding: 1.6rem 1.8rem;
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(0, 200, 210, 0.25);
+            transition: 0.2s;
+        }
+
+        .split:hover {
+            border-color: #0ff6;
+            background: rgba(10, 30, 48, 0.85);
+        }
+
+        .split h3 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            display: inline-block;
+            border-left: 5px solid #0ff;
+            padding-left: 18px;
+            color: white;
+        }
+
+        .split ul {
+            list-style: none;
+        }
+
+        .split li {
+            margin: 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: #eef4ff;
+            font-weight: 500;
+        }
+
+        .split li i {
+            width: 28px;
+            color: #2effd6;
+            font-size: 1.1rem;
+        }
+
+        .badge-plus {
+            background: linear-gradient(135deg, #00c9b6, #008f9c);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-left: 8px;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+
+        /* batch info */
+        .batch-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            background: #05131fcc;
+            padding: 1.6rem 2rem;
+            font-weight: 600;
+            color: white;
+            backdrop-filter: blur(2px);
+        }
+
+        .batch-card {
+            background: #0a1c30;
+            border-radius: 60px;
+            padding: 12px 30px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 700;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+            border: 1px solid #0ff3;
+        }
+
+        .batch-card i {
+            font-size: 1.5rem;
+            color: #0ff;
+        }
+
+        /* cta and contact */
+        .contact-area {
+            padding: 2rem 2rem 2rem;
+            text-align: center;
+            background: #020a12f2;
+        }
+
+        .cta-button {
+            background: linear-gradient(105deg, #00b4aa, #0062cc);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 60px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 22px rgba(0,220,200,0.3);
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: inherit;
+        }
+
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(105deg, #1fd2c2, #2a7ed9);
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(0,255,220,0.4);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 36px;
+            font-size: 0.9rem;
+            color: #d4f0ff;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .contact-details div i {
+            margin-right: 10px;
+            color: #0ff;
+            width: 26px;
+            font-size: 1rem;
+        }
+
+        .highlight-fee {
+            background: #0f2c3e;
+            padding: 4px 15px;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.7rem;
+            padding: 1.2rem;
+            color: #5887a8;
+            border-top: 1px solid rgba(0,255,255,0.15);
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 750px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            .features {
+                padding: 1.8rem;
+                gap: 16px;
+            }
+            .split h3 {
+                font-size: 1.4rem;
+            }
+            .contact-details {
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .batch-card {
+                padding: 8px 18px;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+
+        /* custom tooltip effect */
+        .register-link {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+    <!-- Header -->
+    <div class="header">
+        <div class="nfsu-badge">
+            <i class="fas fa-university"></i> NFSU — National Forensic Sciences University
+        </div>
+        <h1>FACT 2026</h1>
+        <div class="tagline">
+            <span>🎯 Your Gateway to Forensic Excellence</span>
+            <span>⚡ FACT 2026</span>
+        </div>
+        <div class="subjects-row">
+            <div class="subject-pill"><i class="fas fa-laptop-code"></i>  Cyber Forensic</div>
+            <div class="subject-pill"><i class="fas fa-dna"></i>  Biological Science</div>
+        </div>
+        <div style="margin-top: 18px; font-size: 0.85rem; color:#a5ddff; font-weight: 500;">
+            <i class="fas fa-globe-asia"></i> Live Online | Recorded Access | Hands-on Training
+        </div>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
+            <div class="feature-title">Mock Tests</div>
+            <div class="feature-desc">Real exam pattern, performance analytics, NFSU-level simulations & detailed solutions</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div>
+            <div class="feature-title">Live Classes</div>
+            <div class="feature-desc">Interactive sessions by FSL experts & leading forensic practitioners</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+            <div class="feature-title">Doubt Session</div>
+            <div class="feature-desc">Dedicated Q&A after each class + weekly doubt marathons with mentors</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div class="feature-title">24/7 Support</div>
+            <div class="feature-desc">Academic & technical assistance — instant query resolution</div>
+        </div>
+    </div>
+
+    <!-- Subject Deep Dive -->
+    <div class="subject-highlight">
+        <div class="split-container">
+            <div class="split">
+                <h3><i class="fas fa-microchip"></i> Cyber Forensic</h3>
+                <ul>
+                    <li><i class="fas fa-database"></i> Digital Evidence & Forensic Investigation</li>
+                    <li><i class="fas fa-gavel"></i> Cyber Crime & IT Laws (including IPC/BNS)</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile & Cloud Forensics</li>
+                    <li><i class="fas fa-shield-alt"></i> Network Security & Incident Response</li>
+                    <li><i class="fas fa-lock"></i> Malware Forensics & Cryptography</li>
+                </ul>
+                <div style="margin-top: 18px;"><span class="badge-plus">⭐ FACT : Advanced memory forensics + real case studies</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Batch Info -->
+    <div class="batch-info">
+        <div class="batch-card"><i class="fas fa-layer-group"></i> <span><strong>FACT</strong> : Foundation + Exam Focus</span></div>
+        <div class="batch-card"><i class="fas fa-rocket"></i> <span><strong>FACT BIO </strong> : Advanced Specialization</span></div>
+        <div class="batch-card"><i class="fas fa-calendar-alt"></i> <span>Starts: <strong>25 April 2026</strong></span></div>
+        <div class="batch-card"><i class="fas fa-hourglass-half"></i> <span>Duration: 35 Days Intensive | Live online</span></div>
+    </div>
+
+    <!-- Contact & CTA -->
+    <div class="contact-area">
+        <button class="cta-button" id="registerBtn">
+            <i class="fas fa-graduation-cap"></i>  Register Now — Secure Your Seat 
+            <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="contact-details">
+            <!-- Updated: Added tel and mailto links for mobile convenience -->
+            <div><i class="fas fa-phone-alt"></i> <a href="tel:+918755673076" style="color: inherit; text-decoration: none;">+91 8755673076</a></div>
+            <div><i class="fas fa-envelope"></i> <a href="mailto:forensicscience64@gmail.com" style="color: inherit; text-decoration: none;">forensicscience64@gmail.com</a></div>
+            <div><i class="fas fa-book"></i> Registration Fees : <strong>₹2500/-</strong> (Incl. study material)</div>
+            <div><i class="fas fa-chalkboard-teacher"></i> Mentor : <a href="https://www.linkedin.com/in/forensicscience/" target="_blank" style="color: inherit; text-decoration: none;">Ashish Kumar Pal</a></div>
+            <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918755673076" target="_blank" style="color: inherit; text-decoration: none;">24/7 Helpline +91 8755673076</a></div>
+        </div>
+        <div style="margin-top: 20px; font-size: 0.75rem; background: #0e1a2c; display: inline-flex; align-items: center; gap: 12px; padding: 8px 22px; border-radius: 100px;">
+            <i class="fas fa-check-circle" style="color:#0ff;"></i> 100% recorded backup | Live doubt resolution | Certificate
+        </div>
+        <!-- Hidden direct registration link hint -->
+        <div style="margin-top: 16px; font-size: 0.7rem; opacity: 0.7;">
+            <i class="fas fa-link"></i> reg link: https://forms.gle/cuvJWD6EJF6JwSp76
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-shield-alt"></i> NFSU FACT 2026 — India's leading forensic e-learning platform | Limited seats
+    </div>
+</div>
+
+<script>
+    (function() {
+        const registerBtn = document.getElementById('registerBtn');
+        const registrationUrl = "https://forms.gle/cuvJWD6EJF6JwSp76";
+        
+        // Helper function for toast notification with accessibility
+        function showToast(message, duration = 3800) {
+            const toast = document.createElement('div');
+            toast.innerText = message;
+            // Accessibility: Make screen readers announce the toast
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            
+            toast.style.position = 'fixed';
+            toast.style.bottom = '30px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = '#0a2a38';
+            toast.style.color = '#e0f5ff';
+            toast.style.padding = '14px 28px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = '600';
+            toast.style.fontSize = '0.9rem';
+            toast.style.backdropFilter = 'blur(12px)';
+            toast.style.border = '1px solid #0ff';
+            toast.style.zIndex = '9999';
+            toast.style.boxShadow = '0 8px 24px rgba(0,0,0,0.5)';
+            toast.style.fontFamily = "'Inter', sans-serif";
+            toast.style.letterSpacing = '0.3px';
+            toast.style.transition = 'opacity 0.5s ease';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 800);
+            }, duration);
+        }
+
+        if (registerBtn) {
+            registerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Security: Added noopener,noreferrer for external link
+                window.open(registrationUrl, '_blank', 'noopener,noreferrer');
+                showToast('✅ Redirecting to registration form | For any query call +91 8755673076');
+            });
+        }
+
+        // Make the reg link text clickable as well
+        const regHint = document.querySelector('.contact-area div:last-child');
+        if(regHint && regHint.innerText.includes('reg link')) {
+            regHint.style.cursor = 'pointer';
+            regHint.addEventListener('click', () => {
+                window.open(registrationUrl, '_blank', 'noopener,noreferrer');
+                showToast('📝 Opening registration form ...', 2000);
+            });
+        }
+    })();
+</script>
+</body>
+</html>
